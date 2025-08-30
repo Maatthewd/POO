@@ -1,29 +1,26 @@
 package Ejercicio1;
 
-import java.util.Random;
-
 public class Alumno {
 
     private int legajo, DNI, añoIngreso, edad;
     private String nombre, apellido;
-    private Random random = new Random();
 
 
-    public Alumno(String nombre, String apellido, int DNI, int edad, int añoIngreso){
+    public Alumno(int DNI, String nombre, String apellido, int legajo, int edad, int añoIngreso){
         this.DNI = DNI;
-        this.añoIngreso = añoIngreso;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.legajo = legajo;
         this.edad = edad;
-        generarLegajo();
+        this.añoIngreso = añoIngreso;
     }
 
 
-    public void setLegajo(int nuevoLegajo){legajo = nuevoLegajo;}
-    public void setDNI(int nuevoDNI){DNI = nuevoDNI;}
-    public void setAñoIngreso(int nuevoAñoIngreso){añoIngreso = nuevoAñoIngreso;}
-    public void setNombre(String nuevoNombre){nombre = nuevoNombre;}
-    public void setApellido(String nuevoApellido){apellido = nuevoApellido;}
+    public void setLegajo(int legajo){this.legajo = legajo;}
+    public void setDNI(int DNI){this.DNI = DNI;}
+    public void setAñoIngreso(int añoIngreso){this.añoIngreso = añoIngreso;}
+    public void setNombre(String nombre){this.nombre = nombre;}
+    public void setApellido(String apellido){this.apellido = apellido;}
 
     public int getLegajo(){return legajo;}
     public int getDNI(){return DNI;}
@@ -32,12 +29,14 @@ public class Alumno {
     public String getNombre(){return nombre;}
     public String getApellido(){return apellido;}
 
-    private void generarLegajo(){
-        setLegajo(random.nextInt(10000,20000));
+    @Override
+    public String toString() {
+        return "\nALUMNO: "
+                + "\nDNI: " + DNI
+                + "\nNOMBRE: " + nombre
+                + "\nAPELLIDO: " + apellido
+                + "\nLEGAJO: " + legajo
+                + "\nEDAD : " + edad
+                + "\nAÑO DE INGRESO: " + añoIngreso;
     }
-
-
-
-
-
 }

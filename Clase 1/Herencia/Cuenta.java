@@ -1,6 +1,6 @@
 package Herencia;
 
-public class Cuenta {
+public abstract class Cuenta {
 
     private double saldo;
     private int numCuenta;
@@ -9,17 +9,11 @@ public class Cuenta {
 
     }
 
-    public void retirar(double cantidad){
+    public abstract void retirar(double cantidad);
 
-    }
+    public abstract void depositar(double cantidad);
 
-    public void depositar(double cantidad){
-
-    }
-
-    public void verSaldo(){
-
-    }
+    public abstract void verSaldo();
 
 
 }
